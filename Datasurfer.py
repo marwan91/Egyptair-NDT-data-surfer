@@ -1,7 +1,7 @@
 
 # coding: utf-8
 
-# In[1]:
+# In[3]:
 
 
 import wx
@@ -207,7 +207,10 @@ def search_clicked(event):
             method_result.append(method_list[i])
     
     mygrid.ClearGrid()
-    mygrid.DeleteRows(0, mygrid.GetNumberRows())
+    try:
+        mygrid.DeleteRows(0, mygrid.GetNumberRows())
+    except:
+        pass
     mygrid.SetColLabelValue(0, "DESCRIPTION")
     mygrid.SetColLabelValue(1, "Part Number")
     mygrid.SetColLabelValue(2, "Serial Number")
